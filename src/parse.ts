@@ -48,11 +48,6 @@ interface ParsedMessage {
  * @returns {ParsedMessage | null} Parsed message or null if the message is invalid
  */
 export const parseMessage = (rawMessage: string): ParsedMessage | null => {
-    if (typeof rawMessage !== "string") {
-        console.error("Expected a string message, received:", typeof rawMessage);
-        return null; // Return or handle error as appropriate
-    }
-
     const message = rawMessage.trim();
     const parsedMessage: ParsedMessage = {
         tags: {},
